@@ -1,0 +1,8 @@
+<div>
+    <img src="mathCaptcha.png" alt="Captcha Image" />
+    <input type="text" placeholder="Enter the result" [(ngModel)]="answer" />
+    <button (click)="nextStep()">Next</button>
+    @if (isCorrect != null && !isCorrect) {
+        <p class="error">Incorrect answer, please try again.</p>
+    }
+</div>

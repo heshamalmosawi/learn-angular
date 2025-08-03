@@ -1,0 +1,20 @@
+<div>
+    <h1>Verification Required</h1>
+    <p>Please complete the CAPTCHA to continue.</p>
+    @switch (currentStep) {
+    @case ('math') {
+    <app-maths-component />
+    }
+    <!-- @case ('image') {
+      <app-image-captcha></app-image-captcha>
+    }
+    @case ('question') {
+      <app-question-captcha></app-question-captcha>
+    } -->
+
+    @default {
+    Default case.
+    }
+    }
+   
+</div>

@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { Progress } from './services/progress';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('angul-it');
+  constructor(private router: Router, private progress: Progress) {}
+
+  goHome() {
+    this.progress.reset();
+    this.router.navigate(['']);
+  }
 }

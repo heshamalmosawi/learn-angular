@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Progress } from '../../services/progress';
 
 @Component({
   selector: 'app-home-component',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private p: Progress) { }
 
   navigateToCaptcha() {
+    this.p.nextStep();
     this.router.navigate(['/captcha']);
   }
 }
