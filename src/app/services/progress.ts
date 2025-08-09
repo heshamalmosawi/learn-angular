@@ -14,6 +14,20 @@ export class Progress {
     this._currentStep.next(-1);
   }
 
+  isFirstStep(): boolean {
+    return this.currentStep === 0;
+  }
+
+  prevStep(): number {
+    if (this.currentStep > 0) {
+      this._currentStep.next(this.currentStep - 1);
+      console.log(`Current step updated to: ${this.currentStep}`);
+    } else {
+      console.warn('Already at the first step, cannot go back.');
+    }
+    return this.currentStep;
+  }
+
   nextStep(): number {
     this._currentStep.next(this.currentStep + 1);
     console.log(`Current step updated to: ${this.currentStep}`);

@@ -16,10 +16,18 @@ export class TextCaptcha {
   isCorrect: boolean | null = null;
 
   constructor(private p: Progress) { }
+  
+  isFirstStep(): boolean {
+    return this.p.isFirstStep();
+  }
+
+  prevStep(): void {
+    this.p.prevStep();
+  }
 
   nextStep(): void {
     console.log(`Answer provided: ${this.answer}`);
-    if (this.answer.trim() == this.expected_answer) {
+    if (this.answer == this.expected_answer) {
       this.isCorrect = true;
       this.p.nextStep();
     } else {

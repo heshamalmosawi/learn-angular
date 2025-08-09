@@ -28,7 +28,14 @@ export class ImgCaptcha {
     this.expected_answer = this.images.indexOf(this.cat_pic);
   }
 
+  isFirstStep(): boolean {
+    return this.p.isFirstStep(); 
+  }
 
+  prevStep(): void {
+    this.p.prevStep();
+  }
+  
   nextStep(): void {
     console.log(`Answer provided: ${this.answer}`);
     if (Number(this.answer.trim()) - 1 == this.expected_answer) {

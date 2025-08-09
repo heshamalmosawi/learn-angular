@@ -12,6 +12,14 @@ export class MathsComponent {
   answer: string = '';
   isCorrect: boolean | null = null;
   constructor(private p: Progress) { }
+  
+  isFirstStep(): boolean {
+    return this.p.isFirstStep(); 
+  }
+
+  prevStep(): void {
+    this.p.prevStep();
+  }
 
   nextStep(): void {
     console.log(`Answer provided: ${this.answer}`);

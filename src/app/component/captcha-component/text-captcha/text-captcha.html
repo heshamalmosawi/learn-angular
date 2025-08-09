@@ -1,7 +1,10 @@
 <div>
     <p>{{question}}</p>
     <input type="text" placeholder="Enter the result" [(ngModel)]="answer" />
-    <button (click)="nextStep()">Next</button>
+    <div>
+        <button (click)="prevStep()" [disabled]="isFirstStep()">Prev</button>
+        <button (click)="nextStep()">Next</button>
+    </div>
     @if (isCorrect != null && !isCorrect) {
     <p class="error">Incorrect answer, please try again.</p>
     }

@@ -10,6 +10,7 @@
     </div>
     <div>
         <input type="text" [(ngModel)]="answer" placeholder="Type your answer here" />
+        <button (click)="prevStep()" [disabled]="isFirstStep()">Prev</button>
         <button (click)="nextStep()">Next</button>
     </div>
     @if (isCorrect != null && !isCorrect) {

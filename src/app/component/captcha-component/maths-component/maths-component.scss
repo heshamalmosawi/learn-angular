@@ -10,12 +10,18 @@ div {
     background-color: #f0f4f8;
     padding-top: 1rem;
 
-    button {
-        width: 100%;
-    }
-
     p {
         color: red;
         margin: 0px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        button {
+            width: 45%;
+        }
     }
 }
