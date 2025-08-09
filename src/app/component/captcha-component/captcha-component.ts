@@ -24,6 +24,7 @@ export class CaptchaComponent implements OnDestroy {
       this.router.navigate(['']);
     }
     this.#sequence = (['math', 'text', 'img'] as CaptchaStep[]).sort(() => Math.random() - 0.5);
+    this.p.setSequence(this.#sequence);
     this.sub = this.p.currentStep$.subscribe((step) => {
       if (step >= 0 && step < this.#sequence.length) {
         this.currentStep = this.#sequence[step];
