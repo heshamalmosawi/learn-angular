@@ -1,0 +1,18 @@
+<div>
+    <p id=question> Choose the cat to proceed. </p>
+    <div>
+        @for (item of images; track $index) {
+        <div>
+            <img [src]="item || 'https://picsum.photos/200'" alt="Image {{ $index + 1 }}" />
+            <p>Image {{ $index + 1 }}</p>
+        </div>
+        }
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="answer" placeholder="Type your answer here" />
+        <button (click)="nextStep()">Next</button>
+    </div>
+    @if (isCorrect != null && !isCorrect) {
+    <p class="error">Incorrect answer, please try again.</p>
+    }
+</div>
